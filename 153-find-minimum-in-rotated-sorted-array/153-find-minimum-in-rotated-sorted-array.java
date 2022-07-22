@@ -10,6 +10,8 @@ class Solution {
         int n=arr.length;
         while(s<=e){
             int mid = s+(e-s)/2;
+            //arr[(mid+1)%n] && arr[mid]<=arr[(mid+n-1)%n]) 
+            // Not taking mid+1 or mid-1 directly because it might generate out of bound error 
             if(arr[mid]<=arr[(mid+1)%n] && arr[mid]<=arr[(mid+n-1)%n]) return  arr[mid];
             if(arr[s]<=arr[mid]){
                 s = mid;
